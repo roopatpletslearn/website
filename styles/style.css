@@ -141,8 +141,41 @@ ul.notes-list li a {
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s;
+    font-weight: bolder;
 }
 
 ul.notes-list li a:hover {
     color: #388E3C;
+}
+
+
+
+
+
+
+
+
+
+
+.slider {
+    width: 1185px; /* Adjust the width of the frame */
+    height: 300px; /* Adjust the height of the frame */
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    animation: slide 250s linear infinite; /* Slowed down to 130s for a slower transition */
+}
+
+.slides img {
+    width: 300px; /* Width of the frame */
+    height: 400px; /* Height of the frame */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 130)); } /* Adjust according to the total number of images */
 }
