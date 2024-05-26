@@ -170,7 +170,7 @@ ul.notes-list li a:hover {
 }
 
 .slides img {
-    width: 300px; /* Width of the frame */
+    width: 100%; /* Width of the frame */
     height: 400px; /* Height of the frame */
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
