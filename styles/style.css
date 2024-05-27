@@ -199,3 +199,46 @@ ul.notes-list li a:hover {
         max-width: 100%;
     }
 }
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    overflow: hidden; /* Hide excess part of images */
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a fade effect */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .slideshow-container {
+        max-width: 100%;
+    }
+
+    .mySlides img {
+        width: 100%;
+    }
+}
+
