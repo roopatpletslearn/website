@@ -29,6 +29,7 @@ nav ul {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 nav ul li {
@@ -148,34 +149,53 @@ ul.notes-list li a:hover {
     color: #388E3C;
 }
 
-
-
-
-
-
-
-
-
-
 .slider {
-    width: 1185px; /* Adjust the width of the frame */
-    height: 300px; /* Adjust the height of the frame */
-    overflow: hidden;
-    position: relative;
-}
-
-.slides {
     display: flex;
-    animation: slide 250s linear infinite; /* Slowed down to 130s for a slower transition */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 
-.slides img {
-    width: 300px; /* Width of the frame */
-    height: 400px; /* Height of the frame */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+.slider img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    scroll-snap-align: start;
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-300px * 130)); } /* Adjust according to the total number of images */
+/* Mobile Styles */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .video-thumbnails {
+        gap: 1rem;
+    }
+
+    .thumbnail {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .slider img {
+        max-width: 100%;
+    }
 }
