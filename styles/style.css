@@ -29,7 +29,6 @@ nav ul {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 nav ul li {
@@ -149,96 +148,64 @@ ul.notes-list li a:hover {
     color: #388E3C;
 }
 
+
+
+
+
+
+
+
+
+
 .slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-}
-
-.slider img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    scroll-snap-align: start;
-}
-
-/* Mobile Styles */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    nav ul li a {
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    .video-thumbnails {
-        gap: 1rem;
-    }
-
-    .thumbnail {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .slider img {
-        max-width: 100%;
-    }
-}
-
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
+    width: 1185px; /* Adjust the width of the frame */
+    height: 300px; /* Adjust the height of the frame */
+    overflow: hidden;
     position: relative;
-    margin: auto;
-    overflow: hidden; /* Hide excess part of images */
 }
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
+.slides {
+    display: flex;
+    animation: slide 250s linear infinite; /* Slowed down to 130s for a slower transition */
 }
 
-/* Add a fade effect */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+.slides img {
+    width: 100%; /* Width of the frame */
+    height: 400px; /* Height of the frame */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
-@-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 130)); } /* Adjust according to the total number of images */
 }
 
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .slideshow-container {
-        max-width: 100%;
-    }
-
-    .mySlides img {
-        width: 100%;
-    }
+.nav-tabs li {
+    margin: 0.5rem;
 }
+
+.nav-tabs li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.nav-tabs li a:hover {
+    background: #45a049;
+    transform: scale(1.1);
+}
+
 
