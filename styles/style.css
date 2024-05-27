@@ -179,3 +179,32 @@ ul.notes-list li a:hover {
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(-300px * 130)); } /* Adjust according to the total number of images */
 }
+
+
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.nav-tabs li {
+    margin: 0.5rem;
+}
+
+.nav-tabs li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.nav-tabs li a:hover {
+    background: #45a049;
+    transform: scale(1.1);
+}
+
